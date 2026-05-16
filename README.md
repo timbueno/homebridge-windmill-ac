@@ -28,6 +28,26 @@ hb-service restart
 
 Your existing Homebridge accessory configuration can stay the same.
 
+## Manual CLI Tester
+This fork includes a small command-line tool for testing Windmill API control outside of Homebridge.
+
+From the plugin project directory:
+
+```bash
+npm install
+npm run windmill-cli
+```
+
+The CLI prompts for your Windmill auth token, displays the current AC state, and lets you manually test power, mode, fan speed, and target temperature changes.
+
+You can also provide the auth token with an environment variable:
+
+```bash
+WINDMILL_TOKEN="<YOUR_WINDMILL_TOKEN>" npm run windmill-cli
+```
+
+The tester also includes raw `V3` mode writes and a HomeKit target-state simulation, which are useful when debugging mode mapping behavior.
+
 ## How It Works
 This plugin exposes both a thermostat accessory and a fan accessory. The thermostat accessory controls the air conditioner's mode and temperature while the fan accessory controls the air conditioner's fan speed.
 

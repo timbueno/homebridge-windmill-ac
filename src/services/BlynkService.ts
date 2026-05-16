@@ -32,11 +32,11 @@ export class BlynkService {
 
     const response = await fetch(url.toString());
 
-    if (!response.ok) {
-      throw new Error(`Failed to get pin value for ${pin}`);
-    }
-
     const text = await response.text();
+
+    if (!response.ok) {
+      throw new Error(`Failed to get pin value for ${pin}: ${response.status} ${response.statusText} - ${text}`);
+    }
 
     return text;
   }
@@ -54,11 +54,11 @@ export class BlynkService {
 
     const response = await fetch(url.toString());
 
-    if (!response.ok) {
-      throw new Error(`Failed to set pin value for ${pin}`);
-    }
-
     const text = await response.text();
+
+    if (!response.ok) {
+      throw new Error(`Failed to set pin value for ${pin}=${value}: ${response.status} ${response.statusText} - ${text}`);
+    }
 
     return text === '1';
   }

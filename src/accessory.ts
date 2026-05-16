@@ -208,8 +208,6 @@ class WindmillThermostatAccessory implements AccessoryPlugin {
       await this.windmill.setPower(true);
     }
 
-    const previousFanSpeed = await this.windmill.getFanSpeed();
-
     switch(value) {
       case hap.Characteristic.TargetHeatingCoolingState.COOL:
         await this.windmill.setMode(Mode.COOL);
@@ -221,8 +219,6 @@ class WindmillThermostatAccessory implements AccessoryPlugin {
         await this.windmill.setMode(Mode.ECO);
         break;
     }
-
-    await this.windmill.setFanSpeed(previousFanSpeed);
   }
 
   /**

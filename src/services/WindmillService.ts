@@ -103,6 +103,11 @@ export class WindmillService extends BlynkService {
     }
   }
 
+  public async setRawModeValue(value: string): Promise<void> {
+    this.log.debug(`Setting raw mode value to ${value}`);
+    await this.setPinValue(Pin.MODE, value);
+  }
+
   public async setFanSpeed(value: FanSpeed): Promise<void> {
     this.log.debug(`Setting fan speed to ${value}`);
     switch (value) {

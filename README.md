@@ -1,6 +1,33 @@
 # homebridge-windmill-ac
 This [Homebridge](https://homebridge.io/) plugin provide an accessory for [Windmill Air Conditioners](https://windmillair.com/).
 
+This fork is maintained by Tim Bueno and includes a fix for Windmill mode switching from HomeKit.
+
+Original plugin by [@johnanthonyeletto](https://github.com/johnanthonyeletto).
+
+## Installation
+If you already have the published `homebridge-windmill-ac` plugin installed, remove it first:
+
+```bash
+hb-service remove homebridge-windmill-ac
+```
+
+The Homebridge APT package does not always include `git`, which npm needs when installing from a GitHub branch. Install it first if needed:
+
+```bash
+apt update
+apt install -y git
+```
+
+Install this fork from the fixed branch:
+
+```bash
+hb-service add github:timbueno/homebridge-windmill-ac#codex/fix-mode-switching
+hb-service restart
+```
+
+Your existing Homebridge accessory configuration can stay the same.
+
 ## How It Works
 This plugin exposes both a thermostat accessory and a fan accessory. The thermostat accessory controls the air conditioner's mode and temperature while the fan accessory controls the air conditioner's fan speed.
 

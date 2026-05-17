@@ -1,4 +1,4 @@
-# homebridge-windmill-ac
+# homebridge-windmill-ac-timbueno
 This [Homebridge](https://homebridge.io/) plugin provide an accessory for [Windmill Air Conditioners](https://windmillair.com/).
 
 This fork is maintained by Tim Bueno and includes a fix for Windmill mode switching from HomeKit.
@@ -12,6 +12,12 @@ If you already have the published `homebridge-windmill-ac` plugin installed, rem
 hb-service remove homebridge-windmill-ac
 ```
 
+If you previously installed this fork under its new package name, remove that copy before reinstalling:
+
+```bash
+hb-service remove homebridge-windmill-ac-timbueno
+```
+
 The Homebridge APT package does not always include `git`, which npm needs when installing from a GitHub branch. Install it first if needed:
 
 ```bash
@@ -19,10 +25,10 @@ apt update
 apt install -y git
 ```
 
-Install this fork from the fixed branch:
+Install this fork:
 
 ```bash
-hb-service add github:timbueno/homebridge-windmill-ac#codex/fix-mode-switching
+hb-service add github:timbueno/homebridge-windmill-ac
 hb-service restart
 ```
 

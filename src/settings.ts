@@ -6,4 +6,4 @@ export const ACCESSORY_NAME = 'HomebridgeWindmillAC';
 /**
  * This must match the name of your plugin as defined the package.json
  */
-export const PLUGIN_NAME = 'homebridge-windmill-ac';
+export const PLUGIN_NAME = 'homebridge-windmill-ac-timbueno';
